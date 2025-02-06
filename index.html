@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Imagens/Saúde.png" type="image/x-icon">
+    <title>Mais Saúde</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <header>
+        <div class="container-menu">
+            <img src="./Imagens/Saúde.png" alt="Logo Mais Saúde" class="img-fluid logo">
+        </div>
+        <h1>Mais Saúde</h1>
+        <div>
+            <button class="menu-hamburguer" aria-label="Abrir menu">
+                &#9776; <!-- Ícone de menu hambúrguer -->
+            </button>
+            <nav class="menu">
+                <div class="radio-input">
+                    <label>
+                        <input value="value-1" name="value-radio" id="value-1" type="radio" checked>
+                        <a href="./index.html">Início</a>
+                    </label>
+                    <label>
+                        <input value="value-2" name="value-radio" id="value-2" type="radio">
+                        <a href="./html/sobre.html">Sobre Nós</a>
+                    </label>
+                    <label>
+                        <input value="value-3" name="value-radio" id="value-3" type="radio">
+                        <a href="./html/servicos.html">Serviços</a>
+                    </label>
+                    <label>
+                        <input value="value-4" name="value-radio" id="value-4" type="radio">
+                        <a href="./html/contato.html">Contato</a>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Bem-vindos à +Saúde, Academia Facilitada</h2>
+            <p><strong>Na nossa empresa, entendemos os desafios enfrentados pelas academias e pelos profissionais de educação física no gerenciamento dos treinos. Sabemos que muitas academias ainda não possuem um sistema eficiente de treino, dificultando a criação de fichas personalizadas e impactando a experiência dos alunos.</strong></p>
+            <p><strong>Nosso objetivo é desenvolver uma solução digital completa: uma aplicação web que possibilita a criação rápida e intuitiva de fichas de treino personalizadas, otimizando o processo de acompanhamento e execução dos treinos. Com a nossa plataforma, instrutores terão mais facilidade para organizar treinos, e os alunos terão a base necessária para um treino eficaz desde o início.</strong></p>
+            <p><strong>A nossa ferramenta não só melhora a gestão e organização das academias, mas também proporciona uma experiência de treino mais eficiente e personalizada, contribuindo para resultados mais rápidos e uma jornada fitness mais tranquila tanto para instrutores quanto para alunos.</strong></p>
+            <p><strong>Transforme sua academia com a nossa tecnologia e ofereça um treino mais eficaz e organizado!</strong></p>
+        </section>
+
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./Imagens/Musculação (12).png" alt="Atração 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagens/Musculação (13).png" alt="Atração 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagens/Musculação (14).png" alt="Atração 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagens/Musculação (11).png" alt="Atração 4">
+                </div>
+            </div>
+            <button class="carousel-control carousel-control-prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-control carousel-control-next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mais Saúde. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./Js/script.js"></script>
+    <script src="./js/hamburguer.js"></script>
+</body>
+</html>

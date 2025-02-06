@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Saúde</title>
+    <link rel="stylesheet" href="../css/contato.css">
+    <link rel="icon" href="../Imagens/Saúde.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container-menu">
+            <img src="../Imagens/Saúde.png" alt="Logo Mais Saúde" class="img-fluid logo">
+        </div>
+        <h1>Mais Saúde</h1>
+        <div>
+            <button class="menu-hamburguer" aria-label="Abrir menu">
+                &#9776; <!-- Ícone de menu hambúrguer -->
+            </button>
+            <nav class="menu">
+                <div class="radio-input">
+                    <label>
+                        <input value="value-1" name="value-radio" id="value-1" type="radio" checked>
+                        <a href="../index.html">Início</a>
+                    </label>
+                    <label>
+                        <input value="value-2" name="value-radio" id="value-2" type="radio">
+                        <a href="./sobre.html">Sobre Nós</a>
+                    </label>
+                    <label>
+                        <input value="value-3" name="value-radio" id="value-3" type="radio">
+                        <a href="./servicos.html">Serviços</a>
+                    </label>
+                    <label>
+                        <input value="value-4" name="value-radio" id="value-4" type="radio">
+                        <a href="./contato.html">Contato</a>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Para mais informações entre em contato com a gente!</p>
+            <form action="https://formspree.io/f/xldejypd" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="empresa">Nome da Empresa:</label>
+                <input type="text" id="empresa" name="empresa">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit" class="btn-contato">Enviar</button>
+            </form>
+        </section>   
+        <script src="../js/hamburguer.js"></script> 
+    </main>
+    <footer>
+        <p>&copy; 2025 Mais Saúde. Todos os direitos reservados.</p>
+      
+    </footer>
+</body>
+</html>

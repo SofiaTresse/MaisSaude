@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+
+body, h1, h2, h3, p, ul, li, a, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, header h1 {
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    color: #03567C;
+    font-size: 50px;
+}
+button.menu-hamburguer{
+    background-color:#ff000000 ;
+    color: #ff000000;
+    border-color: #ff000000;
+}
+body {
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #1092ce; /* Azul escuro */
+    background-color: #F3F3F3; /* Fundo claro para contraste */
+    line-height: 1.6;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+.container-menu .logo {
+    max-width: 170px;
+}
+
+.container-menu {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.rubik-mono-one-regular {
+  font-family: "Rubik Mono One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Estilização do header */
+header {
+    background-image: url(../Imagens/header.png);
+    background-size: cover;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position:relative; /* Fixa no topo */
+    top: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Evita sobreposição do conteúdo */
+main {
+    margin-top: 0px; /* Adiciona espaço para o conteúdo */
+    flex: 1;
+}
+
+header .logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+img.logo {
+    text-align: left;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    margin-top: -175px;
+    margin-bottom: 23px;
+}
+
+header .menu {
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+
+header .menu li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+#local {
+    color: #8ad6fa;
+}
+
+header .menu li a {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header .menu li a:hover {
+    color: #a1f8de;
+}
+
+p {
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea, form button {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #09A496;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #5EB901;
+}
+
+.radio-input input {
+    display: none;
+  }
+  
+  .radio-input {
+    --container_width: 330px;
+    position: relative;
+    display: flex;
+    margin-top: -20px;
+    align-items: center;
+    border-radius: 9999px;
+    background-color: #fff;
+    color: #000000;
+    width: var(--container_width);
+    overflow: hidden;
+    border: 1px solid rgba(53, 52, 52, 0.226);
+  }
+  
+  .radio-input label {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 14px;
+  }
+  
+  .selection {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: calc(var(--container_width) / 4);
+    z-index: 0;
+    left: 0;
+    top: 0;
+    transition: .15s ease;
+  }
+  
+  .radio-input label:has(input:checked) {
+    color: #fff;
+  }
+  
+  .radio-input label:has(input:checked) ~ .selection {
+    background-color:#3d8ed4;
+    display: inline-block;
+  }
+  
+  .radio-input label:nth-child(1):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 0/4));
+  }
+  
+  .radio-input label:nth-child(2):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 1/4));
+  }
+  
+  .radio-input label:nth-child(3):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 2/4));
+  }
+  
+  .radio-input label:nth-child(4):has(input:checked) ~ .selection {
+    transform: translateX(calc(var(--container_width) * 3/4));
+  }
+
+/* Estilo do Contato */
+#contato {
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin-bottom: 0px;
+    border-radius: 15px;
+    padding: 35px;
+    font-size: 20px;
+}
+
+.btn-contato {
+    background-color: #5EB901;
+    width: 101%;
+}
+
+
+
+.btn-contato:hover {
+    background-color: #53a700;
+}
+
+footer {
+    background-color: #03567C; /* Azul escuro */
+    color: white;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+}
+
+
+@media (max-width: 768px) {
+    .container-menu {
+        flex-direction: column;
+        width: 90%;
+    }
+    button.menu-hamburguer{
+        color: #000000;
+        border-color: #000000;
+    }
+    .radio-input {
+        position: absolute;
+        top: 60px; /* Distância do topo, abaixo do menu hambúrguer */
+        left: 20px; /* Distância da esquerda */
+        --container_width: 80px;  /* Largura menor para o lado de cima */
+        --container_height: 250px; /* Altura maior para o lado lateral */
+        flex-direction: column; /* Organiza os itens verticalmente */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly; /* Distribui os itens de forma igual */
+        border-radius: 10px;
+        background-color: #fff;
+        color: #000000;
+        width: var(--container_width);
+        height: var(--container_height);
+        overflow: hidden;
+        border: 1px solid rgba(53, 52, 52, 0.226);
+        z-index: 9999; /* Garante que fique acima de outros elementos */
+    }
+
+    .radio-input label {
+        width: 100%; /* Ocupa toda a largura do contêiner */
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: -1px;
+    }
+
+    /* Mantém o estilo de seleção do radio */
+    .selection {
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        transition: .15s ease;
+    }
+
+    .radio-input label:has(input:checked) ~ .selection {
+        background-color: #3d8ed4;
+        display: inline-block;
+    }
+
+    .radio-input label:nth-child(1):has(input:checked) ~ .selection {
+        transform: translateY(calc(var(--container_height) * 0/4));
+    }
+
+    .radio-input label:nth-child(2):has(input:checked) ~ .selection {
+        transform: translateY(calc(var(--container_height) * 1/4));
+    }
+
+    .radio-input label:nth-child(3):has(input:checked) ~ .selection {
+        transform: translateY(calc(var(--container_height) * 2/4));
+    }
+
+    .radio-input label:nth-child(4):has(input:checked) ~ .selection {
+        transform: translateY(calc(var(--container_height) * 3/4));
+    }
+    header h1 {
+        font-size: 3rem;
+        margin-top: -10px;
+    }
+
+    header .menu li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .radio-input {
+        margin-top: -1px;
+        --container_width: 22%;
+        flex-direction: column;
+    }
+
+    .planos-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-control {
+        padding: 8px 15px;
+        font-size: 1.2rem;
+    }
+
+    form {
+        padding: 0 10px;
+    }
+
+    #banner h2 {
+        font-size: 2rem;
+    }
+
+    #banner p {
+        font-size: 1rem;
+    }
+
+    /* Menu Hambúrguer */
+    .menu {
+        display: none; /* Ocultar menu por padrão */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-hamburguer {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #000;
+        position: absolute; /* Fixa no topo esquerdo */
+        top: 20px; /* Distância do topo */
+        left: 20px; /* Distância da esquerda */
+        z-index: 9999; /* Garante que fique acima de outros elementos */
+    }
+    .menu.active {
+        display: flex; /* Mostrar o menu quando ativo */
+    }
+
+    .menu li {
+        text-align: center;
+    }
+}
+
+/* Estilos para telas entre 769px e 1024px (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-menu {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 4rem;
+        margin-top: -150px;
+    }
+
+    .planos-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .plano {
+        max-width: 45%;
+    }
+
+    .carousel {
+        height: 400px;
+    }
+}
+
+/* Estilos para telas maiores que 1024px (desktops) */
+@media (min-width: 1025px) {
+    .container-menu {
+        width: 80%;
+    }
+
+    .planos-container {
+        gap: 30px;
+    }
+
+    .plano {
+        max-width: 300px;
+    }
+}
+
