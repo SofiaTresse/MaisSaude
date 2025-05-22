@@ -1,586 +1,213 @@
-/* IMPORTAÇÕES DE FONTE */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,400;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
-
-/* RESET E CONFIGURAÇÕES GERAIS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* VARIÁVEIS */
+:root {
+    /* Cores baseadas na tabela fornecida */
+    --primary-dark: #04668C;       /* Azul escuro */
+    --primary-light: #89D9D9;      /* Azul claro */
+    --secondary-dark: #308C50;     /* Verde escuro */
+    --secondary-light: #57A608;    /* Verde claro */
+    --neutral-dark: #0D0D0D;      /* Preto */
+    --neutral-light: #FFFFFF;      /* Branco */
+    --gray-100: #f8f9fa;          /* Cinza claro */
+    --gray-200: #e9ecef;          /* Cinza médio */
+    --gray-500: #adb5bd;          /* Cinza */
+    
+    /* Tipografia */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+    
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
 }
 
+/* ANIMAÇÕES GERAIS */
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes borderGlow {
+    0% { box-shadow: 0 0 10px rgba(71, 184, 129, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(71, 184, 129, 0.6); }
+    100% { box-shadow: 0 0 10px rgba(71, 184, 129, 0.3); }
+}
+
+/* ESTILOS GERAIS */
 body {
-    font-family: "Raleway", sans-serif;
-    font-weight: 400;
-    background-color: #F3F3F3; /* Fundo claro */
-    color: #03567C; /* Azul escuro */
+    font-family: var(--font-secondary);
+    color: var(--neutral-dark);
+    background-color: var(--gray-100);
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-}
-body, h1, h2, h3, p, ul, li, a, img {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-h1, h2, h3, header h1 {
-    font-family: "Bebas Neue", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-/* CABEÇALHO */
-.container-menu .logo {
-    max-width: 170px;
 }
 
-.container-menu {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
-.rubik-mono-one-regular {
-  font-family: "Rubik Mono One", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Estilização do header */
-header {
-    background-image: url(../Imagens/header.png);
-    background-size: cover;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position:relative; /* Fixa no topo */
-    top: 0;
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-}
-button.menu-hamburguer{
-    background-color:#ff000000 ;
-    color: #ff000000;
-    border-color: #ff000000;
-}
-
-/* Evita sobreposição do conteúdo */
-main {
-    margin-top: 0px; /* Adiciona espaço para o conteúdo */
-    flex: 1;
-}
-
-header .logo {
-    max-width: 100px;
-    margin-bottom: 10px;
-}
-img.logo {
-    text-align: left;
-}
-
-header h1 {
-    font-size: 4.5rem;
-    margin-top: -175px;
-    margin-bottom: 23px;
-}
-
-header .menu {
-    list-style: none;
-    margin-top: 0px;
-    margin-bottom: 12px;
-}
-
-header .menu li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-#local {
-    color: #8ad6fa;
-}
-
-header .menu li a {
-    font-size: 30px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-header .menu li a:hover {
-    color: #a1f8de;
-}
-
-p {
-    padding: 2px;
-    margin-bottom: 5px;
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input, form textarea, form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #CCC;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form button {
-    background-color: #09A496;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #5EB901;
-}
-a{
-    text-decoration: none; /* no underline */
-    color: #000000; 
-
-}
-.radio-input input {
-    display: none;
-  }
-  
-  .radio-input {
-    --container_width: 330px;
-    position: relative;
-    display: flex;
-    margin-top: -20px;
-    align-items: center;
-    border-radius: 9999px;
-    background-color: #fff;
-    color: #000000;
-    width: var(--container_width);
-    overflow: hidden;
-    border: 1px solid rgba(53, 52, 52, 0.226);
-  }
-  
-  .radio-input label {
-    width: 100%;
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
     font-weight: 600;
-    letter-spacing: -1px;
-    font-size: 14px;
-  }
-  
-  .selection {
-    display: none;
+    color: var(--primary-dark);
+}
+
+/* SEÇÃO SOBRE SERVIÇOS */
+#sobre-servicos {
+    background-color: var(--neutral-light);
+    position: relative;
+    overflow: hidden;
+}
+
+#sobre-servicos::before {
+    content: '';
     position: absolute;
-    height: 100%;
-    width: calc(var(--container_width) / 4);
-    z-index: 0;
-    left: 0;
     top: 0;
-    transition: .15s ease;
-  }
-  
-  .radio-input label:has(input:checked) {
-    color: #fff;
-  }
-  
-  .radio-input label:has(input:checked) ~ .selection {
-    background-color:#3d8ed4;
-    display: inline-block;
-  }
-  
-  .radio-input label:nth-child(1):has(input:checked) ~ .selection {
-    transform: translateX(calc(var(--container_width) * 0/4));
-  }
-  
-  .radio-input label:nth-child(2):has(input:checked) ~ .selection {
-    transform: translateX(calc(var(--container_width) * 1/4));
-  }
-  
-  .radio-input label:nth-child(3):has(input:checked) ~ .selection {
-    transform: translateX(calc(var(--container_width) * 2/4));
-  }
-  
-  .radio-input label:nth-child(4):has(input:checked) ~ .selection {
-    transform: translateX(calc(var(--container_width) * 3/4));
-  }
-
-/* SEÇÃO PLANOS */
-#planos {
-    background-color: #0DBCB6; /* Verde médio */
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../Imagens/bg-pattern.png') repeat;
+    opacity: 0.03;
+    z-index: 0;
 }
 
-#planos h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    font-family: "Bebas Neue", sans-serif;
-}
-
-.planos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.plano {
-    background-color: #03567C; /* Azul escuro */
-    color: white;
-    padding: 20px;
+#sobre-servicos .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
     border-radius: 10px;
-    max-width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
 }
 
-.plano:hover {
-    transform: scale(1.05);
-}
-
-.plano h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.plano ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.plano ul li {
-    margin: 5px 0;
-}
-
-.plano .btn {
-    background-color: #5EB901;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.plano .btn:hover {
-    background-color: #53a700;
+#sobre-servicos .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
 }
 
 /* SEÇÃO TREINO PERSONALIZADO */
 #treino {
-    background-color: white;
-    color: #03567C;
-    padding: 60px 20px;
-    text-align: center;
-    margin: 40px auto;
-    border-radius: 15px;
-    max-width: 1200px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+    color: var(--neutral-dark);
 }
 
-#treino h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: "Bebas Neue", sans-serif;
-    color: #0DBCB6;
+#treino img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border-radius: 10px;
 }
 
-#treino p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+#treino img:hover {
+    transform: scale(1.05);
 }
 
-#treino ul {
-    list-style: disc;
-    padding-left: 40px;
-    text-align: left;
-    margin: 20px auto;
-    max-width: 800px;
+#treino .fa-check-circle {
+    transition: transform 0.3s ease;
+    color: var(--secondary-dark);
 }
 
-/* SEÇÃO SOBRE OS SERVIÇOS */
-#sobre-servicos {
-    background-color: white;
-    color: #03567C;
-    padding: 60px 20px;
-    text-align: center;
-    margin: 40px auto;
-    border-radius: 15px;
-    max-width: 1200px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+#treino .hover-effect:hover .fa-check-circle {
+    transform: scale(1.3);
+    color: var(--primary-dark);
 }
 
-#sobre-servicos h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: "Bebas Neue", sans-serif;
-    color: #0DBCB6;
+/* SEÇÃO PLANOS */
+#planos {
+    background-color: var(--neutral-light);
 }
 
-#sobre-servicos p, #sobre-servicos ul {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    text-align: justify;
+.plano-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center bottom;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 15px !important;
 }
 
-#sobre-servicos ul {
-    list-style: disc;
-    padding-left: 40px;
+.plano-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
 }
 
-/* BOTÕES */
+.plano-card:hover::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    animation: borderGlow 1.5s infinite;
+}
 
+#planos .card-header {
+    font-family: var(--font-primary);
+    letter-spacing: 1px;
+    border-radius: 0 !important;
+}
 
+#planos .pricing-card-title {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+}
 
-/* RODAPÉ */
-footer {
-    background-color: #03567C; /* Azul escuro */
-    color: white;
-    text-align: center;
-    padding: 25px;
+/* Botões */
+#planos .card.border-success .btn-success {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+}
+
+#planos .card.border-success .btn-success:hover {
+    background-color: #267a40;
+    border-color: #267a40;
+}
+
+/* Badge "Mais Popular" */
+#planos .badge {
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.plano-card:hover .badge {
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* HOVER EFFECTS GLOBAIS */
+.hover-effect:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.hover-effect:hover i {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
 }
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-    header .container-menu {
-        flex-direction: column;
-        align-items: center;
+    #sobre-servicos .col-md-6:first-child,
+    #treino .col-lg-6:first-child,
+    #planos .col-md-4 {
+        margin-bottom: 2rem;
     }
 
-    header .menu {
-        flex-direction: column;
-        gap: 10px;
+    .animate__animated,
+    .hover-effect:hover {
+        animation: none !important;
+        transform: none;
     }
-
-    #planos, #treino, #sobre-servicos {
-        padding: 30px 10px;
+    
+    .plano-card:hover {
+        transform: none;
+        box-shadow: none !important;
     }
-
-    #planos h2, #treino h2, #sobre-servicos h2 {
-        font-size: 2rem;
-    }
-
-    .planos-container {
-        flex-direction: column;
+    
+    .plano-card:hover::after {
+        animation: none;
     }
 }
-.preco {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2ecc71; /* Cor verde para destacar */
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-    .container-menu {
-        flex-direction: column;
-        width: 90%;
-    }
-    button.menu-hamburguer{
-        color: #000000;
-        border-color: #000000;
-    }    
-  
-    .radio-input {
-        position: absolute;
-        top: 60px; /* Distância do topo, abaixo do menu hambúrguer */
-        left: 20px; /* Distância da esquerda */
-        --container_width: 80px;  /* Largura menor para o lado de cima */
-        --container_height: 250px; /* Altura maior para o lado lateral */
-        flex-direction: column; /* Organiza os itens verticalmente */
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly; /* Distribui os itens de forma igual */
-        border-radius: 10px;
-        background-color: #fff;
-        color: #000000;
-        width: var(--container_width);
-        height: var(--container_height);
-        overflow: hidden;
-        border: 1px solid rgba(53, 52, 52, 0.226);
-        z-index: 9999; /* Garante que fique acima de outros elementos */
-    }
-
-    .radio-input label {
-        width: 100%; /* Ocupa toda a largura do contêiner */
-        padding: 10px;
-        text-align: center;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 600;
-        font-size: 14px;
-        letter-spacing: -1px;
-    }
-
-    /* Mantém o estilo de seleção do radio */
-    .selection {
-        display: none;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        transition: .15s ease;
-    }
-
-    .radio-input label:has(input:checked) ~ .selection {
-        background-color: #3d8ed4;
-        display: inline-block;
-    }
-
-    .radio-input label:nth-child(1):has(input:checked) ~ .selection {
-        transform: translateY(calc(var(--container_height) * 0/4));
-    }
-
-    .radio-input label:nth-child(2):has(input:checked) ~ .selection {
-        transform: translateY(calc(var(--container_height) * 1/4));
-    }
-
-    .radio-input label:nth-child(3):has(input:checked) ~ .selection {
-        transform: translateY(calc(var(--container_height) * 2/4));
-    }
-
-    .radio-input label:nth-child(4):has(input:checked) ~ .selection {
-        transform: translateY(calc(var(--container_height) * 3/4));
-    }
-    header h1 {
-        font-size: 3rem;
-        margin-top: -10px;
-    }
-
-    header .menu li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .radio-input {
-        margin-top: -1px;
-        --container_width: 22%;
-        flex-direction: column;
-    }
-
-    .planos-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .carousel {
-        height: 300px;
-    }
-
-    .carousel-control {
-        padding: 8px 15px;
-        font-size: 1.2rem;
-    }
-
-    form {
-        padding: 0 10px;
-    }
-
-    #banner h2 {
-        font-size: 2rem;
-    }
-
-    #banner p {
-        font-size: 1rem;
-    }
-
-    /* Menu Hambúrguer */
-    .menu {
-        display: none; /* Ocultar menu por padrão */
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .menu-hamburguer {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-        color: #000;
-        position: absolute; /* Fixa no topo esquerdo */
-        top: 20px; /* Distância do topo */
-        left: 20px; /* Distância da esquerda */
-        z-index: 9999; /* Garante que fique acima de outros elementos */
-    }
-    .menu.active {
-        display: flex; /* Mostrar o menu quando ativo */
-    }
-
-    .menu li {
-        text-align: center;
-    }
-}
-
-/* Estilos para telas entre 769px e 1024px (tablets) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container-menu {
-        width: 90%;
-    }
-
-    header h1 {
-        font-size: 4rem;
-        margin-top: -150px;
-    }
-
-    .planos-container {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .plano {
-        max-width: 45%;
-    }
-
-    .carousel {
-        height: 400px;
-    }
-}
-
-/* Estilos para telas maiores que 1024px (desktops) */
-@media (min-width: 1025px) {
-    .container-menu {
-        width: 80%;
-    }
-
-    .planos-container {
-        gap: 30px;
-    }
-
-    .plano {
-        max-width: 300px;
-    }
-}
-

@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   
   <!-- Seu CSS personalizado -->
-  <link rel="stylesheet" href="estilo.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
 
@@ -82,28 +82,28 @@
       <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner rounded-3">
           <div class="carousel-item active">
-            <img src="./Imagens/Musculação (12).png" class="d-block w-100" alt="Treinos Personalizados" />
+            <img src="../Imagens/Musculação (12).png" class="d-block w-100" alt="Treinos Personalizados" />
             <div class="carousel-caption d-none d-md-block">
               <h5>Treinos Personalizados</h5>
               <p>Crie fichas de treino específicas para cada aluno</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./Imagens/Musculação (13).png" class="d-block w-100" alt="Tecnologia Integrada" />
+            <img src="../Imagens/Musculação (13).png" class="d-block w-100" alt="Tecnologia Integrada" />
             <div class="carousel-caption d-none d-md-block">
               <h5>Tecnologia Integrada</h5>
               <p>Solução completa para gestão de academias</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./Imagens/Musculação (14).png" class="d-block w-100" alt="Acompanhamento Profissional" />
+            <img src="../Imagens/Musculação (14).png" class="d-block w-100" alt="Acompanhamento Profissional" />
             <div class="carousel-caption d-none d-md-block">
               <h5>Acompanhamento Profissional</h5>
               <p>Monitore o progresso dos seus alunos</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./Imagens/Musculação (11).png" class="d-block w-100" alt="Resultados Garantidos" />
+            <img src="../Imagens/Musculação (11).png" class="d-block w-100" alt="Resultados Garantidos" />
             <div class="carousel-caption d-none d-md-block">
               <h5>Resultados Garantidos</h5>
               <p>Melhore a performance da sua academia</p>
